@@ -1,0 +1,5 @@
+/.serverless
+/build
+/jspm_packages
+/node_modules
+/yarn-error*.log
