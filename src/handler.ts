@@ -1,11 +1,21 @@
-module.exports.hello = (event: any, context: any, callback: any) => {
-  const response = {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: event,
-    }),
-  }
+import * as Alexa from 'alexa-sdk'
 
-  callback(null, response);
+module.exports.hello = (event: Alexa.RequestBody<any>, context: Alexa.Context) => {
+  const alexa = Alexa.handler(event, context)
+
+  alexa.appId = process.env.APP_ID
+
+  alexa.registerHandlers({
+    'LanuchRequest': function () {
+      this.emit(':tell', 'すみません、よく分かりません')
+    },
+    'Unhandler': function () {
+      this.emit(':tell', 'こんにちは')
+    },
+    'AMAZON.StopIntent': function () {
+      this.emit(':tell', 'さようなら')
+    },
+  })
+
+  alexa.execute()
 };
