@@ -1,15 +1,15 @@
 {
   "name": "typescript-study",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/handler.js",
   "author": "mizokami <r.mizokami@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "tsc"
   },
   "devDependencies": {
-    "@types/alexa-sdk": "^1.1.1",
     "@types/node": "^9.3.0",
+    "alexa-app": "^4.2.0",
     "serverless": "^1.25.0",
     "tslint": "^5.9.1",
     "tslint-config-standard": "^7.0.0",

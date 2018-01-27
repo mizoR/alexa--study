@@ -2,4 +2,5 @@
 /build
 /jspm_packages
 /node_modules
+/tmp
 /yarn-error*.log

@@ -1,21 +1,14 @@
-import * as Alexa from 'alexa-sdk'
+import * as Alexa from 'alexa-app'
 
-module.exports.hello = (event: Alexa.RequestBody<any>, context: Alexa.Context) => {
-  const alexa = Alexa.handler(event, context)
+const alexa = require('alexa')
 
-  alexa.appId = process.env.APP_ID
+const app = new alexa.app()
 
-  alexa.registerHandlers({
-    'LanuchRequest': function () {
-      this.emit(':tell', 'すみません、よく分かりません')
-    },
-    'Unhandler': function () {
-      this.emit(':tell', 'こんにちは')
-    },
-    'AMAZON.StopIntent': function () {
-      this.emit(':tell', 'さようなら')
-    },
-  })
+app.launch(function (request: Alexa.Request, response: any) {
+  // TODO: Should say something with async
+  response.say("OK").send();
 
-  alexa.execute()
-};
+  return false;
+})
+
+exports.handler = app.lambda()
