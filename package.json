@@ -5,13 +5,11 @@
   "author": "mizokami <r.mizokami@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "rm -rf app.zip handler.js && tsc && zip app.zip -r *"
   },
   "devDependencies": {
     "@types/alexa-sdk": "^1.1.1",
-    "@types/node": "^9.3.0"
-  },
-  "dependencies": {
+    "@types/node": "^9.3.0",
     "alexa-sdk": "^1.0.25"
   }
 }
