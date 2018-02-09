@@ -5,9 +5,9 @@
   "author": "mizokami <r.mizokami@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf app.zip handler.js && tsc && zip app.zip -r *"
+    "build": "mkdir -p pkg && rm -rf pkg/* handler.js && tsc && zip pkg/archive.zip -r *"
   },
-  "devDependencies": {
+  "dependencies": {
     "@types/alexa-sdk": "^1.1.1",
     "@types/node": "^9.3.0",
     "alexa-sdk": "^1.0.25"

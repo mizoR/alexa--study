@@ -3,5 +3,6 @@
 /handler.js
 /jspm_packages
 /node_modules
+/pkg
 /tmp
 /yarn-error*.log
